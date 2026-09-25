@@ -1,0 +1,6 @@
+{% extends 'filmes/base.html' %}
+{% block titulo %}{{ titulo }} | CineNotas{% endblock %}
+{% block conteudo %}
+<a href="{% url 'gerenciar' %}">← Voltar</a><h1>{{ titulo }}</h1>
+<form method="post" class="painel">{% csrf_token %}{{ form.as_p }}<button class="botao" type="submit">Salvar filme</button></form>
+{% endblock %}

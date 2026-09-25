@@ -1,0 +1,29 @@
+[
+  {
+    "model": "filmes.filme",
+    "pk": 1,
+    "fields": {
+      "titulo": "Toy Story",
+      "ano": 1995,
+      "sinopse": "Os brinquedos de Andy ganham vida quando ninguém está olhando. A chegada de Buzz Lightyear muda a rotina de Woody e dos outros brinquedos."
+    }
+  },
+  {
+    "model": "filmes.filme",
+    "pk": 2,
+    "fields": {
+      "titulo": "Procurando Nemo",
+      "ano": 2003,
+      "sinopse": "Marlin atravessa o oceano à procura de seu filho Nemo e conta com a ajuda de Dory durante a viagem."
+    }
+  },
+  {
+    "model": "filmes.filme",
+    "pk": 3,
+    "fields": {
+      "titulo": "Divertida Mente",
+      "ano": 2015,
+      "sinopse": "As emoções de Riley tentam ajudá-la a lidar com as mudanças após sua família se mudar para outra cidade."
+    }
+  }
+]

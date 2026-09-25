@@ -1,0 +1,25 @@
+{% extends 'filmes/base.html' %}
+{% block titulo %}Filmes | CineNotas{% endblock %}
+{% block conteudo %}
+<h1>Catálogo de filmes</h1>
+<p>Escolha um filme para ver os comentários e deixar sua avaliação.</p>
+<form class="busca" method="get">
+    <label for="q">Título</label><input id="q" name="q" value="{{ q }}" placeholder="Buscar por título">
+    <label for="ano">Ano</label><input id="ano" name="ano" type="number" min="1888" max="2100" value="{{ ano }}" placeholder="Ano">
+    <button class="botao" type="submit">Buscar</button>
+    {% if q or ano %}<a href="{% url 'catalogo' %}">Limpar</a>{% endif %}
+</form>
+<div class="grade">
+    {% for filme in filmes %}
+    <article class="cartao">
+        <div class="icone">🎞️</div>
+        <h2>{{ filme.titulo }}</h2>
+        <p class="muted">{{ filme.ano }} • {% if filme.total %}Nota {{ filme.media|floatformat:1 }}/5 ({{ filme.total }} avaliações){% else %}Sem avaliações{% endif %}</p>
+        <p>{{ filme.sinopse|truncatewords:20 }}</p>
+        <a class="botao" href="{% url 'detalhe' filme.pk %}">Ver filme</a>
+    </article>
+    {% empty %}
+    <p>Nenhum filme encontrado. {% if user.is_staff %}<a href="{% url 'novo_filme' %}">Cadastre um filme</a>.{% endif %}</p>
+    {% endfor %}
+</div>
+{% endblock %}
