@@ -120,7 +120,7 @@ As entidades atuais são `Filme` (título, ano e sinopse) e `Avaliacao` (filme, 
 | `GET` | `/api/filmes/` e `/api/filmes/<id>/` | API JSON somente leitura. |
 | Vários | `/admin/` | Painel administrativo do Django. |
 
-A [documentação da API](docs/API.md) detalha parâmetros, exemplos JSON e códigos HTTP. A integração externa é usada no fluxo de importação; uma indisponibilidade do serviço é informada ao administrador.
+A [documentação da API](CineNotas_Django/docs/API.md) detalha parâmetros, exemplos JSON e códigos HTTP. A integração externa é usada no fluxo de importação; uma indisponibilidade do serviço é informada ao administrador.
 
 ## 6. Organização dos diretórios
 
@@ -147,7 +147,7 @@ A [documentação da API](docs/API.md) detalha parâmetros, exemplos JSON e cód
         └── static/filmes/style.css
 ```
 
-A árvore representa a organização para o repositório GitHub; este ZIP contém somente a pasta da aplicação. Os documentos de análise, diagramas e evidências de segurança pedidos na especificação da disciplina ainda não estão incluídos.
+A árvore representa o pacote atualizado para colocar na pasta `CineNotas_Django/` do repositório. Os documentos de análise, diagramas e evidências de segurança pedidos na especificação da disciplina ainda não estão incluídos.
 
 ## 7. Participantes
 
@@ -209,13 +209,13 @@ python manage.py runserver
 
 Acesse **http://127.0.0.1:8000/admin/** e entre com o usuário criado. Em Linux ou macOS, a ativação do ambiente virtual é `source .venv/bin/activate`.
 
-**Implantação:** ainda não há URL pública informada. A documentação local da API está em `docs/API.md`.
+**Implantação:** ainda não há URL pública informada. A documentação local da API está em `CineNotas_Django/docs/API.md`.
 
 **Prazos informados:** Fase 1 em **09/10/2026** e Fase 2 em **04/12/2026**.
 
 ## 9. Configuração
 
-Para uso local, o site funciona sem definir variáveis de ambiente, com `DEBUG=True`, SQLite e chave exclusiva para demonstração. O arquivo `.env.example` mostra os nomes das variáveis usadas quando a configuração mudar. O Django não carrega `.env` automaticamente: configure essas variáveis no ambiente antes de executar o servidor de produção.
+Para uso local, o site funciona sem definir variáveis de ambiente, com `DEBUG=True`, SQLite e chave exclusiva para demonstração. O arquivo `CineNotas_Django/.env.example` mostra os nomes das variáveis usadas quando a configuração mudar. O Django não carrega `.env` automaticamente: configure essas variáveis no ambiente antes de executar o servidor de produção.
 
 | Variável | Uso | Exemplo sem segredo |
 | --- | --- | --- |
@@ -276,4 +276,4 @@ Os prazos informados são **09/10/2026 (Fase 1)** e **04/12/2026 (Fase 2)**. As 
 **Referência acadêmica:** *Especificação do Trabalho Django*, disciplina Desenvolvimento Web, professor Felippe Pires Ferreira (documento fornecido para a atividade).  
 **Documentação técnica:** [Django](https://docs.djangoproject.com/).
 
-Documentação da API: [`docs/API.md`](docs/API.md). Links para diagramas, apresentação, aplicação publicada e evidências de segurança serão adicionados quando esses artefatos existirem. Fonte externa: [Ghibli API](https://github.com/mazipan/ghibli-api).
+Documentação da API: [`CineNotas_Django/docs/API.md`](CineNotas_Django/docs/API.md). Links para diagramas, apresentação, aplicação publicada e evidências de segurança serão adicionados quando esses artefatos existirem. Fonte externa: [Ghibli API](https://github.com/mazipan/ghibli-api).

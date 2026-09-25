@@ -1,0 +1,26 @@
+* { box-sizing: border-box; }
+body { margin: 0; font: 16px/1.5 Arial, sans-serif; color: #222; background: #f6f7f9; }
+.container { width: min(900px, 92%); margin: auto; }
+header { background: #26334a; color: white; padding: 18px 0; }
+header .container { display: flex; justify-content: space-between; gap: 12px; align-items: center; }
+.marca { color: white; text-decoration: none; font-size: 22px; font-weight: bold; }
+main { min-height: 75vh; padding: 30px 0; }
+h1 { margin-bottom: 4px; } h1 small { font-size: .55em; color: #666; }
+a { color: #245ca5; }
+.grade { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-top: 24px; }
+.cartao, .painel, .comentario { background: white; padding: 20px; border: 1px solid #e3e5e8; border-radius: 8px; }
+.cartao h2 { margin: 5px 0; } .icone { font-size: 36px; }.muted { color: #666; font-size: 14px; }
+.botao { display: inline-block; background: #245ca5; border: 0; border-radius: 5px; padding: 9px 14px; color: white; text-decoration: none; font: inherit; cursor: pointer; }
+.painel { margin: 28px 0; } .comentario { margin: 10px 0; }.comentario p { margin-bottom: 0; }
+label { display: block; font-weight: bold; margin-bottom: 4px; }
+input, select, textarea { width: 100%; max-width: 520px; padding: 9px; border: 1px solid #bbb; border-radius: 4px; font: inherit; }
+.errorlist { color: #ae2424; }.sucesso { color: #216534; font-weight: bold; }
+footer { text-align: center; padding: 22px; color: #777; }
+header nav { display: flex; gap: 16px; flex-wrap: wrap; } header nav a { color: white; text-decoration: none; }
+.busca { display: flex; flex-wrap: wrap; align-items: end; gap: 10px; margin: 22px 0; }
+.busca label { margin-bottom: 0; }.busca input { max-width: 220px; }
+.acoes { display: flex; gap: 12px; flex-wrap: wrap; margin: 20px 0; }
+.tabela { width: 100%; border-collapse: collapse; background: white; margin: 20px 0; }
+.tabela th, .tabela td { padding: 12px; border-bottom: 1px solid #ddd; text-align: left; }
+.aviso { background: #e5f2e8; padding: 12px; border-radius: 5px; }
+@media print { header, footer, .sem-impressao { display: none; } body { background: white; } main { padding: 0; } }
