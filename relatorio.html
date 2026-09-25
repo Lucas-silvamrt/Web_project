@@ -1,0 +1,11 @@
+{% extends 'filmes/base.html' %}
+{% block titulo %}Relatório | CineNotas{% endblock %}
+{% block conteudo %}
+<h1>Relatório de avaliações</h1>
+<p>Filmes: <strong>{{ total_filmes }}</strong> • Avaliações: <strong>{{ total_avaliacoes }}</strong></p>
+<p class="sem-impressao">Para imprimir ou salvar em PDF, pressione <strong>Ctrl+P</strong> no navegador.</p>
+<table class="tabela"><thead><tr><th>Filme</th><th>Ano</th><th>Avaliações</th><th>Nota média</th></tr></thead><tbody>
+{% for filme in filmes %}<tr><td>{{ filme.titulo }}</td><td>{{ filme.ano }}</td><td>{{ filme.total }}</td><td>{% if filme.media %}{{ filme.media|floatformat:1 }}/5{% else %}—{% endif %}</td></tr>
+{% empty %}<tr><td colspan="4">Nenhum filme cadastrado.</td></tr>{% endfor %}
+</tbody></table>
+{% endblock %}

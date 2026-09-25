@@ -1,0 +1,14 @@
+{% extends 'filmes/base.html' %}
+{% block titulo %}Filmes externos | CineNotas{% endblock %}
+{% block conteudo %}
+<a href="{% url 'gerenciar' %}">← Voltar</a><h1>Filmes do Studio Ghibli</h1>
+<p>Catálogo externo fornecido por uma API comunitária. Escolha um filme para adicioná-lo ao CineNotas.</p>
+{% for message in messages %}<p class="aviso">{{ message }}</p>{% endfor %}
+{% if erro %}<p class="aviso">{{ erro }}</p>{% endif %}
+<div class="grade">
+{% for indice, filme in filmes %}<article class="cartao"><h2>{{ filme.titulo }}</h2><p>{{ filme.ano }}</p><p>{{ filme.sinopse|truncatewords:25 }}</p>
+<form method="post">{% csrf_token %}<input type="hidden" name="indice" value="{{ indice }}"><button class="botao" type="submit">Adicionar ao catálogo</button></form></article>
+{% empty %}{% if not erro %}<p>Nenhum filme disponível no momento.</p>{% endif %}{% endfor %}
+</div>
+<p>Fonte: <a href="https://ghibli-api.vercel.app/" rel="noopener noreferrer">Ghibli API</a>.</p>
+{% endblock %}

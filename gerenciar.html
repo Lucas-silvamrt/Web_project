@@ -1,0 +1,12 @@
+{% extends 'filmes/base.html' %}
+{% block titulo %}Gerenciar filmes | CineNotas{% endblock %}
+{% block conteudo %}
+<h1>Gerenciar filmes</h1>
+<p>Esta área é acessível apenas para administradores.</p>
+{% for message in messages %}<p class="aviso">{{ message }}</p>{% endfor %}
+<div class="acoes"><a class="botao" href="{% url 'novo_filme' %}">Cadastrar filme</a><a class="botao" href="{% url 'importar_filme' %}">Buscar filmes externos</a></div>
+<table class="tabela"><thead><tr><th>Filme</th><th>Ano</th><th>Ações</th></tr></thead><tbody>
+{% for filme in filmes %}<tr><td>{{ filme.titulo }}</td><td>{{ filme.ano }}</td><td><a href="{% url 'editar_filme' filme.pk %}">Editar</a> · <a href="{% url 'excluir_filme' filme.pk %}">Excluir</a></td></tr>
+{% empty %}<tr><td colspan="3">Nenhum filme cadastrado.</td></tr>{% endfor %}
+</tbody></table>
+{% endblock %}

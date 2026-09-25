@@ -1,0 +1,6 @@
+{% extends 'filmes/base.html' %}
+{% block titulo %}Excluir filme | CineNotas{% endblock %}
+{% block conteudo %}
+<h1>Excluir filme</h1><p>Deseja excluir <strong>{{ filme.titulo }}</strong> e todas as avaliações dele?</p>
+<form method="post">{% csrf_token %}<button class="botao" type="submit">Confirmar exclusão</button> <a href="{% url 'gerenciar' %}">Cancelar</a></form>
+{% endblock %}

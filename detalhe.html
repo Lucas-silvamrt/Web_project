@@ -1,0 +1,28 @@
+{% extends 'filmes/base.html' %}
+{% block titulo %}{{ filme.titulo }} | CineNotas{% endblock %}
+{% block conteudo %}
+<a href="{% url 'catalogo' %}">← Voltar ao catálogo</a>
+<h1>{{ filme.titulo }} <small>({{ filme.ano }})</small></h1>
+<p>{{ filme.sinopse }}</p>
+<p><strong>Nota média:</strong> {% if media %}{{ media|floatformat:1 }} de 5{% else %}Ainda não avaliado{% endif %}</p>
+<section class="painel">
+    <h2>Deixe sua avaliação</h2>
+    {% if enviado %}<p class="sucesso">Avaliação enviada com sucesso!</p>{% endif %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="botao" type="submit">Enviar avaliação</button>
+    </form>
+</section>
+<section>
+    <h2>Avaliações</h2>
+    {% for avaliacao in avaliacoes %}
+    <article class="comentario">
+        <strong>{{ avaliacao.nome }}</strong> — {{ avaliacao.nota }}/5
+        <p>{{ avaliacao.comentario }}</p>
+    </article>
+    {% empty %}
+    <p>Seja a primeira pessoa a avaliar este filme.</p>
+    {% endfor %}
+</section>
+{% endblock %}
